@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-handwriting: 'Caveat', cursive;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0b1120;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+  }
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+/* Glassmorphism & Custom Card Styling */
+.glass-panel {
+  background: rgba(13, 18, 28, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(17, 24, 39, 0.9);
+  border-color: rgba(56, 189, 248, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -12px rgba(56, 189, 248, 0.16), 0 0 0 1px rgba(56, 189, 248, 0.15);
+}
+
+.gradient-text-sky {
+  background: linear-gradient(135deg, #ffffff 10%, #e0f2fe 45%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #ffffff 10%, #d1fae5 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-purple {
+  background: linear-gradient(135deg, #ffffff 10%, #ede9fe 50%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.grid-pattern {
+  background-size: 48px 48px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Glow orb animation */
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(1.1);
+  }
+}
+
+.animate-glow {
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Subtle border glow */
+.border-glow-sky {
+  box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.2);
+}
+
+.border-glow-emerald {
+  box-shadow: 0 0 25px -5px rgba(52, 211, 153, 0.2);
+}
